@@ -3,24 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".TestTwoActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-       />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/btn_start_a"
-        android:text="跳转到b"
-
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_result_a"
+        android:text="返回数据"
         />
-
 
 
 </LinearLayout>

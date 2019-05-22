@@ -1,8 +1,11 @@
 package com.example.pactera.gsondemo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -24,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.btn_start_a).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(MainActivity.this,TestTwoActivity.class),1000);
+                overridePendingTransition(0, 0);
+            }
+        });
+
 
         //反序列化：
         Gson gson=new Gson();
@@ -192,6 +204,17 @@ public class MainActivity extends AppCompatActivity {
 //        Result<List<User>> userListResult = gson.fromJson(json,userListType);
 //        List<User> users = userListResult.data;
 
+
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(data!=null){
+            Log.d("aaaa","====data==="+data.getStringExtra("data"));
+        }
 
 
 
