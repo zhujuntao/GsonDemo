@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //反序列化：
+        //反序列化：vvcccc
         Gson gson=new Gson();
 
         int i=gson.fromJson("1",Integer.class);
